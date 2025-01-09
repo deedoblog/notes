@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>忒科棣</title>
+  <title>Tech的不老歌</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="记录学习历程、分享技术感悟">
 <meta property="og:type" content="website">
-<meta property="og:title" content="忒科棣">
+<meta property="og:title" content="Tech的不老歌">
 <meta property="og:url" content="http://yshen4.gitee.com/teked/index.html">
-<meta property="og:site_name" content="忒科棣">
+<meta property="og:site_name" content="Tech的不老歌">
 <meta property="og:description" content="记录学习历程、分享技术感悟">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Yue Shen">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/teked/atom.xml" title="忒科棣" type="application/atom+xml">
+    <link rel="alternate" href="/teked/atom.xml" title="Tech的不老歌" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/teked/favicon.png">
@@ -41,11 +41,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/teked/" id="logo">忒科棣</a>
+        <a href="/teked/" id="logo">Tech的不老歌</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/teked/" id="subtitle">By Yue Shen</a>
+          <a href="/teked/" id="subtitle">自技术，为技术</a>
         </h2>
       
     </div>
@@ -75,10 +75,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-python-functional-programming-immutables" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/teked/2024/12/24/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-12-24T23:06:33.412Z" itemprop="datePublished">2024-12-25</time>
+    <a href="/teked/2024/12/31/python-functional-programming-immutables/" class="article-date">
+  <time class="dt-published" datetime="2025-01-01T04:25:47.000Z" itemprop="datePublished">2025-01-01</time>
 </a>
     
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/teked/2024/12/24/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/teked/2024/12/31/python-functional-programming-immutables/">python：不可变数据</a>
     </h1>
   
 
@@ -97,27 +97,311 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>不可变数据类型的内容在创建后无法修改，这对于编写安全、可预测的代码非常有用。Python支持一些不可变的数据类型和相关技术来实现不可变数据（Immutable Data）。</p>
+<h2 id="不可变数据类型"><a href="#不可变数据类型" class="headerlink" title="不可变数据类型"></a>不可变数据类型</h2><p>Python 内置了几种不可变数据类型：元组（Tuple），字符串（String），frozenset，数字（Number）。</p>
+<h3 id="元组（Tuple）"><a href="#元组（Tuple）" class="headerlink" title="元组（Tuple）"></a>元组（Tuple）</h3><p>元组是不可变的序列。一旦创建，元组的内容无法更改。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List isn&#x27;t immutable</span></span><br><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">l[<span class="number">0</span>] = <span class="number">4</span> </span><br><span class="line"></span><br><span class="line">t = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">t[<span class="number">0</span>] = <span class="number">4</span>  <span class="comment"># TypeError: &#x27;tuple&#x27; object does not support item assignment</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="字符串（String）"><a href="#字符串（String）" class="headerlink" title="字符串（String）"></a>字符串（String）</h3><p>Python的字符串是不可变的。任何修改字符串的操作都会生成一个新的字符串对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;hello&quot;</span></span><br><span class="line">s[<span class="number">0</span>] = <span class="string">&quot;H&quot;</span>  <span class="comment"># TypeError: &#x27;str&#x27; object does not support item assignment</span></span><br><span class="line">s = s.upper()  <span class="comment"># 生成一个新的字符串 &#x27;HELLO&#x27;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string"><span class="meta">&gt;&gt;&gt; </span>id(s)</span></span><br><span class="line"><span class="string">4372588144</span></span><br><span class="line"><span class="string"><span class="meta">&gt;&gt;&gt; </span>s = s.upper()</span></span><br><span class="line"><span class="string"><span class="meta">&gt;&gt;&gt; </span>id(s)</span></span><br><span class="line"><span class="string">4372589488</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yshen4.gitee.com/teked/2024/12/31/python-functional-programming-immutables/" data-id="cm5opqtq70003180shkw4ea04" data-title="python：不可变数据" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+  
+    <article id="post-python-functional-programming-high-order-function" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/teked/2024/12/31/python-functional-programming-high-order-function/" class="article-date">
+  <time class="dt-published" datetime="2025-01-01T03:05:52.000Z" itemprop="datePublished">2025-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/teked/2024/12/31/python-functional-programming-high-order-function/">python: 高阶函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在python语法里，函数是一等公民，支持高阶函数。高阶函数（Higher-Order Function）是指以下两类函数：</p>
+<ol>
+<li>接受一个或多个函数作为参数的函数。</li>
+<li>将一个函数作为结果返回的函数。</li>
+</ol>
+<h2 id="函数对象作为函数参数"><a href="#函数对象作为函数参数" class="headerlink" title="函数对象作为函数参数"></a>函数对象作为函数参数</h2><p>我们可以将一个函数作为参数传递给另一个函数。例如，将一个函数应用到列表中的每个元素。这时候，lambda经常被用来创建匿名函数传递给另一函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_function</span>(<span class="params">data, func</span>):</span><br><span class="line">    <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> data]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例用法</span></span><br><span class="line">data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">result = apply_function(data, <span class="keyword">lambda</span> x: x**<span class="number">2</span>)  <span class="comment"># 应用平方函数</span></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出: [1, 4, 9, 16]</span></span><br></pre></td></tr></table></figure>
+
+<p>函数对象作为函数参数可以使用得到许多需要定制编程逻辑的地方，比如根据不同需要或数据结构的排序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 降序排序</span></span><br><span class="line">data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">sorted_data = <span class="built_in">sorted</span>(data, key=<span class="keyword">lambda</span> x: -x)</span><br><span class="line"><span class="built_in">print</span>(sorted_data)  <span class="comment"># Output: [4, 3, 2, 1]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="返回函数"><a href="#返回函数" class="headerlink" title="返回函数"></a>返回函数</h2><p>一个函数可以返回另一个函数，从而实现闭包或动态行为。下面的例子使用返回函数来定义多个不同倍增函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">multiplier</span>(<span class="params">factor</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> x: x * factor</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例用法</span></span><br><span class="line">twoTimes = multiplier(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(twoTimes(<span class="number">5</span>))  <span class="comment"># 输出: 10</span></span><br><span class="line"></span><br><span class="line">threeTimes = multiplier(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(threeTimes(<span class="number">5</span>))  <span class="comment"># 输出: 15</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Python内置高阶函数"><a href="#Python内置高阶函数" class="headerlink" title="Python内置高阶函数"></a>Python内置高阶函数</h2><p>Python 提供了一些常见的高阶函数，例如 map、filter 和 reduce。</p>
+<ol>
+<li>map ：将一个函数应用于可迭代对象的每个元素，返回一个包含结果的新迭代器。</li>
+<li>filter ：使用一个函数来过滤可迭代对象中的元素，保留返回值为 True 的元素。</li>
+<li>reduce ：使用一个二元函数将可迭代对象缩减为单一值。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">doubled = <span class="built_in">map</span>(<span class="keyword">lambda</span> x: x * <span class="number">2</span>, numbers)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(doubled)) <span class="comment"># 结果：[2, 4, 6, 8]</span></span><br><span class="line"></span><br><span class="line">filtered = <span class="built_in">filter</span>(<span class="keyword">lambda</span> x: x % <span class="number">2</span> == <span class="number">0</span>, numbers)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(filtered)) <span class="comment"># 结果：[2, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line">product = reduce(<span class="keyword">lambda</span> x, y: x * y, numbers)</span><br><span class="line"><span class="built_in">print</span>(product) <span class="comment"># 结果：24</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="组合高阶函数"><a href="#组合高阶函数" class="headerlink" title="组合高阶函数"></a>组合高阶函数</h2><p>如果我们按照纯函数设计函数，我们可以组合多个高阶函数来实现更复杂的工作流。比如使用Python内置高阶函数实现数据的过滤和累积</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="literal">None</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="literal">None</span>, <span class="number">10</span>]</span><br><span class="line">total =  reduce(<span class="keyword">lambda</span> x, accumulate: x + accumulate,</span><br><span class="line">                <span class="built_in">filter</span>(<span class="keyword">lambda</span> x: x <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>, numbers)) <span class="comment"># 55</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>高阶函数有许多优点，是 Python 函数式编程的核心，能够帮助开发者编写优雅、简洁且具有表现力的代码</p>
+<ol>
+<li>代码复用性：将逻辑抽象为可重用的函数。</li>
+<li>代码简洁性：关注“做什么”而不是“怎么做”。</li>
+<li>不变性：鼓励函数式编程的原则，比如不变性和无状态性</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yshen4.gitee.com/teked/2024/12/24/hello-world/" data-id="cm532yt0s0000yt0sc54s51xg" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://yshen4.gitee.com/teked/2024/12/31/python-functional-programming-high-order-function/" data-id="cm5opqtq70002180s5zqo1kk5" data-title="python: 高阶函数" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/teked/2024/12/24/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-12-24T23:48:40.508Z" itemprop="datePublished">2024-12-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/teked/2024/12/24/hello-world/">你好，世界</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>欢迎使用 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>！这是您的第一篇帖子。</p>
+<p>查看 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">文档</a> 了解更多信息。如果您在使用 Hexo 时遇到任何问题，您可以在 <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">故障排除</a> 中找到答案，也可以在 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a> 上向我提问。</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建第一贴"><a href="#创建第一贴" class="headerlink" title="创建第一贴"></a>创建第一贴</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">写</a></p>
+<h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">服务</a></p>
+<h3 id="创建静态文件"><a href="#创建静态文件" class="headerlink" title="创建静态文件"></a>创建静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">创建</a></p>
+<h3 id="部署到远程服务器"><a href="#部署到远程服务器" class="headerlink" title="部署到远程服务器"></a>部署到远程服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">部署</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yshen4.gitee.com/teked/2024/12/24/hello-world/" data-id="cm5opqtq60001180sadlgcwrk" data-title="你好，世界" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-functional-programming-pure-function" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/teked/2024/12/24/python-functional-programming-pure-function/" class="article-date">
+  <time class="dt-published" datetime="2024-12-24T08:42:05.000Z" itemprop="datePublished">2024-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/teked/2024/12/24/python-functional-programming-pure-function/">python: 编写纯函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是纯函数？"><a href="#什么是纯函数？" class="headerlink" title="什么是纯函数？"></a>什么是纯函数？</h2><p>纯函数是指只依赖输入参数并返回一个结果的函数，而不产生任何副作用（如修改全局变量或输出到控制台）。</p>
+<ol>
+<li>依赖输入：输出完全由输入参数决定。</li>
+<li>不依赖外部状态：不访问或修改全局变量、类属性或函数范围之外的任何可变数据。</li>
+<li>无副作用：不会打印到控制台、写入文件、发出网络请求或修改输入参数。</li>
+<li>引用透明性：函数调用可以用其返回值替换，而不会改变程序的行为。</li>
+</ol>
+<p>下面的函数是纯函数， 其输出只依赖输入，不依赖外部状态，也无IO和异常：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 简单数学运算</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
+
+<p>再请看下面的例子，increment不是纯函数，原因是</p>
+<ol>
+<li>它的输出不是完全由输入参数决定的。</li>
+<li>它依赖外部状态</li>
+<li>它修改全局变量，从而有副作用。</li>
+</ol>
+<p>这个函数还有一个问题是不是幂等的(indempotent)，也即不可以重复调用，因为每次调用都会改变状态。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">memo = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">increment</span>(<span class="params">x</span>):</span><br><span class="line">  <span class="keyword">global</span> memo</span><br><span class="line">  memo += x</span><br><span class="line">  <span class="keyword">return</span> memo</span><br></pre></td></tr></table></figure>
+
+<h2 id="为什么代码要写成纯函数？"><a href="#为什么代码要写成纯函数？" class="headerlink" title="为什么代码要写成纯函数？"></a>为什么代码要写成纯函数？</h2><p>纯函数的优点是相同的输入总是返回相同的输出，使得代码更容易理解、调试和测试。</p>
+<ol>
+<li>可测试性：纯函数更易于测试，因为它们的输出可以根据输入进行预测。</li>
+<li>可调试性：使用纯函数的代码更容易推理和调试，因为它们的行为是独立的，不依赖于外部因素。</li>
+<li>并行性：纯函数可以轻松并行化，因为它们没有可能导致竞争条件的副作用。</li>
+<li>可缓存性：纯函数调用的结果可以缓存（记忆）以提高性能。</li>
+<li>可读性和可维护性：使用纯函数的代码通常更容易理解和维护，因为它更模块化且更可预测。</li>
+</ol>
+<h2 id="如何编写纯函数？"><a href="#如何编写纯函数？" class="headerlink" title="如何编写纯函数？"></a>如何编写纯函数？</h2><ol>
+<li>避免修改输入参数：如果您需要修改数据结构，请在函数内创建它的副本并修改副本。</li>
+<li>不使用全局变量：如果您需要访问外部数据，请将其作为参数传递给函数。</li>
+<li>避免副作用：不要执行任何修改外部状态的操作，例如打印到控制台或写入文件。</li>
+<li>确保确定性行为：确保函数始终为相同的输入返回相同的输出。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这个increment是纯函数</span></span><br><span class="line">increment = add</span><br><span class="line">a = increment(x, a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串操作</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">concatenate</span>(<span class="params">str1, str2</span>):</span><br><span class="line">    <span class="keyword">return</span> str1 + str2</span><br></pre></td></tr></table></figure>
+
+<p>python支持许多实现纯函数的工具，比如list comprehension</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列表中的元素平方</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">numbers</span>):</span><br><span class="line">    <span class="keyword">return</span> [x ** <span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> numbers]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 过滤偶数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">filter_even</span>(<span class="params">numbers</span>):</span><br><span class="line">    <span class="keyword">return</span> [x <span class="keyword">for</span> x <span class="keyword">in</span> numbers <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p>下面的factorial函数也是纯函数，它使用递归：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算阶乘</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">factorial</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n * factorial(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何处理I-O？"><a href="#如何处理I-O？" class="headerlink" title="如何处理I&#x2F;O？"></a>如何处理I&#x2F;O？</h2><p>Monad尤其是IO Monad用于在纯函数式编程中处理带有副作用的计算（例如 I&#x2F;O 操作）。IO Monad用于封装带有副作用的计算（例如读取文件、写入控制台），以一种函数式的方式进行处理。它提供了以下功能：</p>
+<ol>
+<li>封装：将副作用控制在可预测的范围内。</li>
+<li>组合：允许以可预测的方式将带有副作用的操作进行链式组合。</li>
+</ol>
+<p>Step 1：定义 IO Monad 类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">IO</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, action</span>):</span><br><span class="line">        <span class="variable language_">self</span>.action = action  <span class="comment"># action 是一个表示副作用的函数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 执行封装的操作</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.action()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">map</span>(<span class="params">self, func</span>):</span><br><span class="line">        <span class="comment"># 对操作结果应用一个纯函数</span></span><br><span class="line">        <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: func(<span class="variable language_">self</span>.run()))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">flat_map</span>(<span class="params">self, func</span>):</span><br><span class="line">        <span class="comment"># 对操作结果应用一个返回另一个 IO Monad 的函数</span></span><br><span class="line">        <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: func(<span class="variable language_">self</span>.run()).run())</span><br></pre></td></tr></table></figure>
+
+<p>Step 2：封装副作用<br>封装I&#x2F;O操作的函数，这些函数都返回IO Monad</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">read_file</span>(<span class="params">filepath</span>):</span><br><span class="line">    <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: <span class="built_in">open</span>(filepath).read())</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">write_file</span>(<span class="params">filepath, content</span>):</span><br><span class="line">    <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: <span class="built_in">open</span>(filepath, <span class="string">&#x27;w&#x27;</span>).write(content))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_line</span>(<span class="params">message</span>):</span><br><span class="line">    <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: <span class="built_in">print</span>(message))</span><br></pre></td></tr></table></figure>
+
+<p>Step 3：组合 IO 操作<br>使用 flat_map 将多个 IO 操作组合起来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transform</span>(<span class="params">filepath</span>):</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        read_file(filepath)</span><br><span class="line">        .<span class="built_in">map</span>(<span class="keyword">lambda</span> content: content.upper())  <span class="comment"># 转换文件内容为大写</span></span><br><span class="line">        .flat_map(<span class="keyword">lambda</span> content: write_file(filepath, content))  <span class="comment"># 保存转换后的内容</span></span><br><span class="line">        .flat_map(<span class="keyword">lambda</span> _: print_line(<span class="string">&quot;文件已更新。&quot;</span>))  <span class="comment"># 输出提示信息</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行程序</span></span><br><span class="line">transform(<span class="string">&quot;example.txt&quot;</span>).run()</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何处理缓存？"><a href="#如何处理缓存？" class="headerlink" title="如何处理缓存？"></a>如何处理缓存？</h2><p>可以通过将纯函数包装在另一个函数中来实现记忆化。在python里， 我们不需要封装函数，functools提供了缓存lru_cache，可以实现纯函数的记忆化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache <span class="comment">#为函数结果提供缓存</span></span><br><span class="line"><span class="keyword">from</span> timeit <span class="keyword">import</span> timeit</span><br><span class="line"></span><br><span class="line"><span class="comment"># without cache</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</span><br><span class="line">timeit(<span class="keyword">lambda</span> : fib(<span class="number">10</span>)) <span class="comment"># 8.32442141599995</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># DDP with lru_cache</span></span><br><span class="line"><span class="meta">@lru_cache(<span class="params">maxsize=<span class="number">32</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fibLRU</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fibLRU(n - <span class="number">1</span>) + fibLRU(n - <span class="number">2</span>)</span><br><span class="line">timeit(<span class="keyword">lambda</span> : fibLRU(<span class="number">10</span>)) <span class="comment"># 0.07016045800003212</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文献"><a href="#文献" class="headerlink" title="文献"></a>文献</h2><p>[1] <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pure_function">Pure function</a><br>[2] <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Functional_programming">Functional programming</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yshen4.gitee.com/teked/2024/12/24/python-functional-programming-pure-function/" data-id="cm5opqtq70004180s0gc33k7h" data-title="python: 编写纯函数" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-functional-programming" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/teked/2024/12/24/python-functional-programming/" class="article-date">
+  <time class="dt-published" datetime="2024-12-24T08:36:42.000Z" itemprop="datePublished">2024-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/teked/2024/12/24/python-functional-programming/">python: 函数式编程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>函数式编程是一种编程模式，强调下面几个特点：</p>
+<ol>
+<li>编写无副作用的函数（纯函数）：给定相同的输入总是返回相同的输出，并且不产生任何副作用</li>
+<li>无状态函数：应尽量避免依赖任何外部状态或上下文，而是完全依赖输入参数</li>
+<li>函数作为一等公民，使用高阶函数：接受函数作为参数，或返回函数，比如 map、filter、reduce。</li>
+<li>使用不可变数据结构</li>
+<li>递归：递归与不可变数据结构结合，使得代码更具声明性，便于理解</li>
+<li>Monads：使用Monads处理副作用（如异常、状态变化、I&#x2F;O 等）</li>
+</ol>
+<p>虽然python不是为函数式编程设计的，但是python支持很多函数式编程的语法。</p>
+<ol>
+<li><p>在python语法里，函数是一等公民，支持高阶函数，python可以将函数作为参数传递，或者将函数作为返回值</p>
+</li>
+<li><p>python支持Lambda。</p>
+</li>
+<li><p>python支持递归</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># without cache</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python支持函数式工具（map、filter、reduce），对可迭代对象进行映射、过滤和聚合操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">squareOdds</span>(<span class="params">n</span>):</span><br><span class="line">    nums = (i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">map</span>(<span class="keyword">lambda</span> i: i ** <span class="number">2</span>, </span><br><span class="line">        <span class="built_in">filter</span>(<span class="keyword">lambda</span> i: i % <span class="number">2</span> != <span class="number">0</span>, nums)</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"><span class="built_in">list</span>(squareOdds(<span class="number">10</span>)) <span class="comment"># [1, 9, 25, 49, 81]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python支持列表推导式与生成器表达式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列表推导式</span></span><br><span class="line">squared = [x ** <span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> numbers]</span><br><span class="line"><span class="built_in">print</span>(squared)  <span class="comment"># 输出：[1, 4, 9, 16]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成器表达式</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line">sqrt_gen = (sqrt(x) <span class="keyword">for</span> x <span class="keyword">in</span> numbers)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(sqrt_gen))  <span class="comment"># 输出：[1.0, 1.4142135623730951, 1.7320508075688772, 2.0]</span></span><br></pre></td></tr></table></figure></li>
+<li><p>python支持不可变数据结构，比如tuple和frozenset</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">immutable_tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">immutable_set = <span class="built_in">frozenset</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python支持函数式工具模块 (functools)和itertools 模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial <span class="comment">#创建偏函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">multiply</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x * y</span><br><span class="line"></span><br><span class="line">double = partial(multiply, <span class="number">2</span>) <span class="comment"># pass 2 to x i multiply</span></span><br><span class="line"><span class="built_in">print</span>(double(<span class="number">4</span>))  <span class="comment"># 输出：8</span></span><br><span class="line"></span><br><span class="line">half = partial(multiply, <span class="number">0.5</span>)</span><br><span class="line"><span class="built_in">print</span>(half(<span class="number">4</span>))  <span class="comment"># 输出：2.0</span></span><br></pre></td></tr></table></figure></li>
+<li><p>python支持闭包与装饰器，闭包允许函数内部定义函数并捕获外部变量；装饰器可以用于对函数进行功能增强。</p>
+</li>
+<li><p>python支持Immutable Data（如 dataclasses 与 types.MappingProxyType）</p>
+</li>
+</ol>
+<p>下面一系列的文章中，我结合一些例子讨论函数式编程在Python开发中的应用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yshen4.gitee.com/teked/2024/12/24/python-functional-programming/" data-id="cm5opqtq80005180sgpqt7j18" data-title="python: 函数式编程" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/teked/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" rel="tag">函数式编程，python</a></li></ul>
+
     </footer>
   </div>
   
@@ -153,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yshen4.gitee.com/teked/2024/12/23/My-New-Post/" data-id="cm533ac960000340se0e36czt" data-title="我的第一贴" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://yshen4.gitee.com/teked/2024/12/23/My-New-Post/" data-id="cm5opqtq30000180s4u2o27so" data-title="我的第一贴" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -175,15 +459,29 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/teked/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" rel="tag">函数式编程，python</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/teked/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" style="font-size: 10px;">函数式编程，python</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/teked/archives/2024/12/">十二月 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/teked/archives/2025/01/">一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/teked/archives/2024/12/">十二月 2024</a></li></ul>
     </div>
   </div>
 
@@ -196,11 +494,23 @@
       <ul>
         
           <li>
-            <a href="/teked/2024/12/24/hello-world/">Hello World</a>
+            <a href="/teked/2024/12/31/python-functional-programming-immutables/">python：不可变数据</a>
           </li>
         
           <li>
-            <a href="/teked/2024/12/23/My-New-Post/">我的第一贴</a>
+            <a href="/teked/2024/12/31/python-functional-programming-high-order-function/">python: 高阶函数</a>
+          </li>
+        
+          <li>
+            <a href="/teked/2024/12/24/hello-world/">你好，世界</a>
+          </li>
+        
+          <li>
+            <a href="/teked/2024/12/24/python-functional-programming-pure-function/">python: 编写纯函数</a>
+          </li>
+        
+          <li>
+            <a href="/teked/2024/12/24/python-functional-programming/">python: 函数式编程</a>
           </li>
         
       </ul>
@@ -216,7 +526,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2024 Yue Shen<br>
+      &copy; 2025 Yue Shen<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

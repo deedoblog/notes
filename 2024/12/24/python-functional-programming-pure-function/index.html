@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python: 编写纯函数 | Tech的不老歌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="什么是纯函数？纯函数是指只依赖输入参数并返回一个结果的函数，而不产生任何副作用（如修改全局变量或输出到控制台）。  依赖输入：输出完全由输入参数决定。 不依赖外部状态：不访问或修改全局变量、类属性或函数范围之外的任何可变数据。 无副作用：不会打印到控制台、写入文件、发出网络请求或修改输入参数。 引用透明性：函数调用可以用其返回值替换，而不会改变程序的行为。  下面的函数是纯函数， 其输出只依赖输入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python: 编写纯函数">
+<meta property="og:url" content="http://yshen4.gitee.com/teked/2024/12/24/python-functional-programming-pure-function/index.html">
+<meta property="og:site_name" content="Tech的不老歌">
+<meta property="og:description" content="什么是纯函数？纯函数是指只依赖输入参数并返回一个结果的函数，而不产生任何副作用（如修改全局变量或输出到控制台）。  依赖输入：输出完全由输入参数决定。 不依赖外部状态：不访问或修改全局变量、类属性或函数范围之外的任何可变数据。 无副作用：不会打印到控制台、写入文件、发出网络请求或修改输入参数。 引用透明性：函数调用可以用其返回值替换，而不会改变程序的行为。  下面的函数是纯函数， 其输出只依赖输入">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-24T08:42:05.000Z">
+<meta property="article:modified_time" content="2024-12-29T19:02:03.992Z">
+<meta property="article:author" content="Yue Shen">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/teked/atom.xml" title="Tech的不老歌" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/teked/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/teked/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/teked/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/teked/" id="logo">Tech的不老歌</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/teked/" id="subtitle">自技术，为技术</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/teked/">Home</a>
+        
+          <a class="main-nav-link" href="/teked/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/teked/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yshen4.gitee.com/teked"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python-functional-programming-pure-function" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/teked/2024/12/24/python-functional-programming-pure-function/" class="article-date">
+  <time class="dt-published" datetime="2024-12-24T08:42:05.000Z" itemprop="datePublished">2024-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python: 编写纯函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是纯函数？"><a href="#什么是纯函数？" class="headerlink" title="什么是纯函数？"></a>什么是纯函数？</h2><p>纯函数是指只依赖输入参数并返回一个结果的函数，而不产生任何副作用（如修改全局变量或输出到控制台）。</p>
+<ol>
+<li>依赖输入：输出完全由输入参数决定。</li>
+<li>不依赖外部状态：不访问或修改全局变量、类属性或函数范围之外的任何可变数据。</li>
+<li>无副作用：不会打印到控制台、写入文件、发出网络请求或修改输入参数。</li>
+<li>引用透明性：函数调用可以用其返回值替换，而不会改变程序的行为。</li>
+</ol>
+<p>下面的函数是纯函数， 其输出只依赖输入，不依赖外部状态，也无IO和异常：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 简单数学运算</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
+
+<p>再请看下面的例子，increment不是纯函数，原因是</p>
+<ol>
+<li>它的输出不是完全由输入参数决定的。</li>
+<li>它依赖外部状态</li>
+<li>它修改全局变量，从而有副作用。</li>
+</ol>
+<p>这个函数还有一个问题是不是幂等的(indempotent)，也即不可以重复调用，因为每次调用都会改变状态。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">memo = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">increment</span>(<span class="params">x</span>):</span><br><span class="line">  <span class="keyword">global</span> memo</span><br><span class="line">  memo += x</span><br><span class="line">  <span class="keyword">return</span> memo</span><br></pre></td></tr></table></figure>
+
+<h2 id="为什么代码要写成纯函数？"><a href="#为什么代码要写成纯函数？" class="headerlink" title="为什么代码要写成纯函数？"></a>为什么代码要写成纯函数？</h2><p>纯函数的优点是相同的输入总是返回相同的输出，使得代码更容易理解、调试和测试。</p>
+<ol>
+<li>可测试性：纯函数更易于测试，因为它们的输出可以根据输入进行预测。</li>
+<li>可调试性：使用纯函数的代码更容易推理和调试，因为它们的行为是独立的，不依赖于外部因素。</li>
+<li>并行性：纯函数可以轻松并行化，因为它们没有可能导致竞争条件的副作用。</li>
+<li>可缓存性：纯函数调用的结果可以缓存（记忆）以提高性能。</li>
+<li>可读性和可维护性：使用纯函数的代码通常更容易理解和维护，因为它更模块化且更可预测。</li>
+</ol>
+<h2 id="如何编写纯函数？"><a href="#如何编写纯函数？" class="headerlink" title="如何编写纯函数？"></a>如何编写纯函数？</h2><ol>
+<li>避免修改输入参数：如果您需要修改数据结构，请在函数内创建它的副本并修改副本。</li>
+<li>不使用全局变量：如果您需要访问外部数据，请将其作为参数传递给函数。</li>
+<li>避免副作用：不要执行任何修改外部状态的操作，例如打印到控制台或写入文件。</li>
+<li>确保确定性行为：确保函数始终为相同的输入返回相同的输出。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这个increment是纯函数</span></span><br><span class="line">increment = add</span><br><span class="line">a = increment(x, a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串操作</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">concatenate</span>(<span class="params">str1, str2</span>):</span><br><span class="line">    <span class="keyword">return</span> str1 + str2</span><br></pre></td></tr></table></figure>
+
+<p>python支持许多实现纯函数的工具，比如list comprehension</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列表中的元素平方</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">numbers</span>):</span><br><span class="line">    <span class="keyword">return</span> [x ** <span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> numbers]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 过滤偶数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">filter_even</span>(<span class="params">numbers</span>):</span><br><span class="line">    <span class="keyword">return</span> [x <span class="keyword">for</span> x <span class="keyword">in</span> numbers <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p>下面的factorial函数也是纯函数，它使用递归：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算阶乘</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">factorial</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n * factorial(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何处理I-O？"><a href="#如何处理I-O？" class="headerlink" title="如何处理I&#x2F;O？"></a>如何处理I&#x2F;O？</h2><p>Monad尤其是IO Monad用于在纯函数式编程中处理带有副作用的计算（例如 I&#x2F;O 操作）。IO Monad用于封装带有副作用的计算（例如读取文件、写入控制台），以一种函数式的方式进行处理。它提供了以下功能：</p>
+<ol>
+<li>封装：将副作用控制在可预测的范围内。</li>
+<li>组合：允许以可预测的方式将带有副作用的操作进行链式组合。</li>
+</ol>
+<p>Step 1：定义 IO Monad 类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">IO</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, action</span>):</span><br><span class="line">        <span class="variable language_">self</span>.action = action  <span class="comment"># action 是一个表示副作用的函数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 执行封装的操作</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.action()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">map</span>(<span class="params">self, func</span>):</span><br><span class="line">        <span class="comment"># 对操作结果应用一个纯函数</span></span><br><span class="line">        <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: func(<span class="variable language_">self</span>.run()))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">flat_map</span>(<span class="params">self, func</span>):</span><br><span class="line">        <span class="comment"># 对操作结果应用一个返回另一个 IO Monad 的函数</span></span><br><span class="line">        <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: func(<span class="variable language_">self</span>.run()).run())</span><br></pre></td></tr></table></figure>
+
+<p>Step 2：封装副作用<br>封装I&#x2F;O操作的函数，这些函数都返回IO Monad</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">read_file</span>(<span class="params">filepath</span>):</span><br><span class="line">    <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: <span class="built_in">open</span>(filepath).read())</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">write_file</span>(<span class="params">filepath, content</span>):</span><br><span class="line">    <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: <span class="built_in">open</span>(filepath, <span class="string">&#x27;w&#x27;</span>).write(content))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_line</span>(<span class="params">message</span>):</span><br><span class="line">    <span class="keyword">return</span> IO(<span class="keyword">lambda</span>: <span class="built_in">print</span>(message))</span><br></pre></td></tr></table></figure>
+
+<p>Step 3：组合 IO 操作<br>使用 flat_map 将多个 IO 操作组合起来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transform</span>(<span class="params">filepath</span>):</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        read_file(filepath)</span><br><span class="line">        .<span class="built_in">map</span>(<span class="keyword">lambda</span> content: content.upper())  <span class="comment"># 转换文件内容为大写</span></span><br><span class="line">        .flat_map(<span class="keyword">lambda</span> content: write_file(filepath, content))  <span class="comment"># 保存转换后的内容</span></span><br><span class="line">        .flat_map(<span class="keyword">lambda</span> _: print_line(<span class="string">&quot;文件已更新。&quot;</span>))  <span class="comment"># 输出提示信息</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行程序</span></span><br><span class="line">transform(<span class="string">&quot;example.txt&quot;</span>).run()</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何处理缓存？"><a href="#如何处理缓存？" class="headerlink" title="如何处理缓存？"></a>如何处理缓存？</h2><p>可以通过将纯函数包装在另一个函数中来实现记忆化。在python里， 我们不需要封装函数，functools提供了缓存lru_cache，可以实现纯函数的记忆化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache <span class="comment">#为函数结果提供缓存</span></span><br><span class="line"><span class="keyword">from</span> timeit <span class="keyword">import</span> timeit</span><br><span class="line"></span><br><span class="line"><span class="comment"># without cache</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</span><br><span class="line">timeit(<span class="keyword">lambda</span> : fib(<span class="number">10</span>)) <span class="comment"># 8.32442141599995</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># DDP with lru_cache</span></span><br><span class="line"><span class="meta">@lru_cache(<span class="params">maxsize=<span class="number">32</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fibLRU</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fibLRU(n - <span class="number">1</span>) + fibLRU(n - <span class="number">2</span>)</span><br><span class="line">timeit(<span class="keyword">lambda</span> : fibLRU(<span class="number">10</span>)) <span class="comment"># 0.07016045800003212</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文献"><a href="#文献" class="headerlink" title="文献"></a>文献</h2><p>[1] <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pure_function">Pure function</a><br>[2] <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Functional_programming">Functional programming</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yshen4.gitee.com/teked/2024/12/24/python-functional-programming-pure-function/" data-id="cm5opqtq70004180s0gc33k7h" data-title="python: 编写纯函数" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/teked/2024/12/24/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          你好，世界
+        
+      </div>
+    </a>
+  
+  
+    <a href="/teked/2024/12/24/python-functional-programming/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">python: 函数式编程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/teked/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" rel="tag">函数式编程，python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/teked/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" style="font-size: 10px;">函数式编程，python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/teked/archives/2025/01/">一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/teked/archives/2024/12/">十二月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/teked/2024/12/31/python-functional-programming-immutables/">python：不可变数据</a>
+          </li>
+        
+          <li>
+            <a href="/teked/2024/12/31/python-functional-programming-high-order-function/">python: 高阶函数</a>
+          </li>
+        
+          <li>
+            <a href="/teked/2024/12/24/hello-world/">你好，世界</a>
+          </li>
+        
+          <li>
+            <a href="/teked/2024/12/24/python-functional-programming-pure-function/">python: 编写纯函数</a>
+          </li>
+        
+          <li>
+            <a href="/teked/2024/12/24/python-functional-programming/">python: 函数式编程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Yue Shen<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/teked/" class="mobile-nav-link">Home</a>
+  
+    <a href="/teked/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/teked/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/teked/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/teked/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
