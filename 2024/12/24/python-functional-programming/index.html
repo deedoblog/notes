@@ -9,7 +9,7 @@
   <meta name="description" content="函数式编程是一种编程模式，强调下面几个特点：  编写无副作用的函数（纯函数）：给定相同的输入总是返回相同的输出，并且不产生任何副作用 无状态函数：应尽量避免依赖任何外部状态或上下文，而是完全依赖输入参数 函数作为一等公民，使用高阶函数：接受函数作为参数，或返回函数，比如 map、filter、reduce。 使用不可变数据结构 递归：递归与不可变数据结构结合，使得代码更具声明性，便于理解 Mona">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python: 函数式编程">
-<meta property="og:url" content="https://deedoblog.github.io/notes/2024/12/24/python-functional-programming/index.html">
+<meta property="og:url" content="https://deedoblog.github.io/tech/2024/12/24/python-functional-programming/index.html">
 <meta property="og:site_name" content="Tech的不老歌">
 <meta property="og:description" content="函数式编程是一种编程模式，强调下面几个特点：  编写无副作用的函数（纯函数）：给定相同的输入总是返回相同的输出，并且不产生任何副作用 无状态函数：应尽量避免依赖任何外部状态或上下文，而是完全依赖输入参数 函数作为一等公民，使用高阶函数：接受函数作为参数，或返回函数，比如 map、filter、reduce。 使用不可变数据结构 递归：递归与不可变数据结构结合，使得代码更具声明性，便于理解 Mona">
 <meta property="og:locale" content="zh_CN">
@@ -19,18 +19,18 @@
 <meta property="article:tag" content="函数式编程，python">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/notes/atom.xml" title="Tech的不老歌" type="application/atom+xml">
+    <link rel="alternate" href="/tech/atom.xml" title="Tech的不老歌" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/notes/favicon.png">
+    <link rel="shortcut icon" href="/tech/favicon.png">
   
   
   
-<link rel="stylesheet" href="/notes/css/style.css">
+<link rel="stylesheet" href="/tech/css/style.css">
 
   
     
-<link rel="stylesheet" href="/notes/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/tech/fancybox/jquery.fancybox.min.css">
 
   
   
@@ -44,11 +44,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/notes/" id="logo">Tech的不老歌</a>
+        <a href="/tech/" id="logo">Tech的不老歌</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/notes/" id="subtitle">自技术，为技术</a>
+          <a href="/tech/" id="subtitle">自技术，为技术</a>
         </h2>
       
     </div>
@@ -56,20 +56,20 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-          <a class="main-nav-link" href="/notes/">Home</a>
+          <a class="main-nav-link" href="/tech/">Home</a>
         
-          <a class="main-nav-link" href="/notes/archives">Archives</a>
+          <a class="main-nav-link" href="/tech/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/notes/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/tech/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
         
         <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://deedoblog.github.io/notes"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://deedoblog.github.io/tech"></form>
       </div>
     </div>
   </div>
@@ -78,7 +78,7 @@
       <div class="outer">
         <section id="main"><article id="post-python-functional-programming" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/notes/2024/12/24/python-functional-programming/" class="article-date">
+    <a href="/tech/2024/12/24/python-functional-programming/" class="article-date">
   <time class="dt-published" datetime="2024-12-24T08:36:42.000Z" itemprop="datePublished">2024-12-24</time>
 </a>
     
@@ -136,11 +136,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://deedoblog.github.io/notes/2024/12/24/python-functional-programming/" data-id="cm5oqsxs40004jb0sa8bp4w17" data-title="python: 函数式编程" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://deedoblog.github.io/tech/2024/12/24/python-functional-programming/" data-id="cm5se4es00004kx0s993002st" data-title="python: 函数式编程" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/notes/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" rel="tag">函数式编程，python</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tech/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" rel="tag">函数式编程，python</a></li></ul>
 
     </footer>
   </div>
@@ -148,7 +148,7 @@
     
 <nav id="article-nav">
   
-    <a href="/notes/2024/12/24/python-functional-programming-pure-function/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/tech/2024/12/24/python-functional-programming-pure-function/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -158,7 +158,7 @@
     </a>
   
   
-    <a href="/notes/2024/12/23/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/tech/2024/12/23/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
       <div class="article-nav-title">我的第一贴</div>
     </a>
@@ -180,7 +180,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/notes/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" rel="tag">函数式编程，python</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tech/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" rel="tag">函数式编程，python</a></li></ul>
     </div>
   </div>
 
@@ -190,7 +190,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/notes/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" style="font-size: 10px;">函数式编程，python</a>
+      <a href="/tech/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%8Cpython/" style="font-size: 10px;">函数式编程，python</a>
     </div>
   </div>
 
@@ -199,7 +199,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/notes/archives/2025/01/">一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/notes/archives/2024/12/">十二月 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/tech/archives/2025/01/">一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/tech/archives/2024/12/">十二月 2024</a></li></ul>
     </div>
   </div>
 
@@ -212,23 +212,23 @@
       <ul>
         
           <li>
-            <a href="/notes/2024/12/31/python-functional-programming-immutables/">python：不可变数据</a>
+            <a href="/tech/2024/12/31/python-functional-programming-immutables/">python：不可变数据</a>
           </li>
         
           <li>
-            <a href="/notes/2024/12/31/python-functional-programming-high-order-function/">python: 高阶函数</a>
+            <a href="/tech/2024/12/31/python-functional-programming-high-order-function/">python: 高阶函数</a>
           </li>
         
           <li>
-            <a href="/notes/2024/12/24/hello-world/">你好，世界</a>
+            <a href="/tech/2024/12/24/hello-world/">你好，世界</a>
           </li>
         
           <li>
-            <a href="/notes/2024/12/24/python-functional-programming-pure-function/">python: 编写纯函数</a>
+            <a href="/tech/2024/12/24/python-functional-programming-pure-function/">python: 编写纯函数</a>
           </li>
         
           <li>
-            <a href="/notes/2024/12/24/python-functional-programming/">python: 函数式编程</a>
+            <a href="/tech/2024/12/24/python-functional-programming/">python: 函数式编程</a>
           </li>
         
       </ul>
@@ -253,25 +253,25 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/notes/" class="mobile-nav-link">Home</a>
+    <a href="/tech/" class="mobile-nav-link">Home</a>
   
-    <a href="/notes/archives" class="mobile-nav-link">Archives</a>
+    <a href="/tech/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
 
 
-<script src="/notes/js/jquery-3.6.4.min.js"></script>
+<script src="/tech/js/jquery-3.6.4.min.js"></script>
 
 
 
   
-<script src="/notes/fancybox/jquery.fancybox.min.js"></script>
+<script src="/tech/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-<script src="/notes/js/script.js"></script>
+<script src="/tech/js/script.js"></script>
 
 
 
