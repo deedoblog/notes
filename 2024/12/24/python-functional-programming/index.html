@@ -14,7 +14,7 @@
 <meta property="og:description" content="函数式编程是一种编程模式，强调下面几个特点：  编写无副作用的函数（纯函数）：给定相同的输入总是返回相同的输出，并且不产生任何副作用 无状态函数：应尽量避免依赖任何外部状态或上下文，而是完全依赖输入参数 函数作为一等公民，使用高阶函数：接受函数作为参数，或返回函数，比如 map、filter、reduce。 使用不可变数据结构 递归：递归与不可变数据结构结合，使得代码更具声明性，便于理解 Mona">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-24T08:36:42.000Z">
-<meta property="article:modified_time" content="2024-12-29T19:23:34.891Z">
+<meta property="article:modified_time" content="2025-01-11T17:33:59.295Z">
 <meta property="article:author" content="Yue Shen">
 <meta property="article:tag" content="函数式编程，python">
 <meta name="twitter:card" content="summary">
@@ -107,11 +107,9 @@
 <li>递归：递归与不可变数据结构结合，使得代码更具声明性，便于理解</li>
 <li>Monads：使用Monads处理副作用（如异常、状态变化、I&#x2F;O 等）</li>
 </ol>
-<p>虽然python不是为函数式编程设计的，但是python支持很多函数式编程的语法。</p>
+<p>虽然python不是为函数式编程设计的，但是python支持很多函数式编程的语法。下面一系列的文章中，我结合一些例子讨论函数式编程在Python开发中的应用。</p>
 <ol>
-<li><p>在python语法里，函数是一等公民，支持高阶函数，python可以将函数作为参数传递，或者将函数作为返回值</p>
-</li>
-<li><p>python支持Lambda。</p>
+<li><p>在python语法里，函数是一等公民，支持高阶函数，python可以将函数作为参数传递，或者将函数作为返回值。 python支持Lambda</p>
 </li>
 <li><p>python支持递归</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># without cache</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
@@ -131,12 +129,11 @@
 <li><p>python支持Immutable Data（如 dataclasses 与 types.MappingProxyType）</p>
 </li>
 </ol>
-<p>下面一系列的文章中，我结合一些例子讨论函数式编程在Python开发中的应用。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://deedoblog.github.io/tech/2024/12/24/python-functional-programming/" data-id="cm5se4es00004kx0s993002st" data-title="python: 函数式编程" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://deedoblog.github.io/tech/2024/12/24/python-functional-programming/" data-id="cm5sizd610005li0sdv8l90z9" data-title="python: 函数式编程" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
